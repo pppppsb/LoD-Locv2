@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page - LoD-Loc v2</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- KaTeX for Math -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script>
+        // Auto-render math on page load
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true}
+                ]
+            });
+        });
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. Header: Title, Authors, Links -->
+    <header class="py-12 bg-white shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            
+            <!-- Paper Title -->
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                <span class="gradient-text">LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment</span>
+            </h1>
+            
+            <!-- Conference/Journal Name -->
+            <p class="text-xl text-gray-500 font-semibold mb-6">ICCV 2025</p>
+
+            <!-- Authors -->
+            <div class="text-lg mb-6">
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Juelin Zhu</a><sup>1</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Shuaibang Peng</a><sup>1</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Long Wang</a><sup>2</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Hanlin Tan</a><sup>1</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Yu Liu</a><sup>1</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Maojun Zhang</a><sup>1</sup></span>
+                <span class="mx-2"><a href="#" class="text-blue-600 hover:underline">Shen Yan</a><sup>1*</sup></span>
+            </div>
+            
+            <!-- Affiliations -->
+            <div class="text-gray-600 text-sm mb-8">
+                <span class="mx-3"><sup>1</sup> National University of Defense Technology</span>
+                <span class="mx-3"><sup>2</sup> Westlake University</span>
+            </div>
+
+            <!-- Action Buttons (Paper, Code, Video, etc.) -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Paper Link -->
+                <a href="#" class="flex items-center bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-gray-700 transition">
+                    <i class="fas fa-file-pdf mr-2"></i> Paper
+                </a>
+                <!-- arXiv Link -->
+                <a href="https://arxiv.org/abs/2507.00659" class="flex items-center bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition">
+                    <i class="ai ai-arxiv mr-2"></i> arXiv
+                </a>
+                <!-- Code Link -->
+                <a href="https://github.com/VictorZoo/LoD-Loc-v2" class="flex items-center bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-gray-700 transition">
+                    <i class="fab fa-github mr-2"></i> Code
+                </a>
+                <!-- Video Link -->
+                <a href="https://www.youtube.com/watch?v=yreUB4zq7kc" class="flex items-center bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-gray-700 transition">
+                    <i class="fab fa-youtube mr-2"></i> Video
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-10 space-y-16">
+        
+        <!-- 2. Teaser Section -->
+        <section class="text-center">
+            <div class="rounded-xl overflow-hidden shadow-xl border border-gray-200">
+                <!-- Use <img> or <video autoplay loop muted playsinline> -->
+                <img src="./assets/teaser.png" 
+                     alt="Teaser Visualization" class="w-full object-cover">
+            </div>
+            <p class="mt-4 text-gray-600 text-sm md:text-base max-w-3xl mx-auto text-justify">
+                In this paper, we introduce LoD-Loc v2 to tackle aerial visual localization using <strong>low-LoD</strong> city models. These models are characterized by wide availability, lightweight properties, and inherent privacy-preserving capabilities. Given a query image with its prior pose, our approach utilizes the explicit silhouette alignment to recover the camera pose.
+            </p>
+        </section>
+
+        <!-- 3. Abstract -->
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h2 class="text-3xl font-bold mb-6 text-center">Abstract</h2>
+            <p class="text-gray-700 leading-relaxed text-justify text-lg">
+                We propose a novel method for aerial visual localization over <strong>low</strong> Level-of-Detail (LoD) city models. Previous wireframe-alignment-based method LoD-Loc has shown promising localization results leveraging LoD models. However, LoD-Loc mainly relies on high-LoD (LoD3 or LoD2) city models, but the majority of available models and those many countries plan to construct nationwide are low-LoD (LoD1). Consequently, enabling localization on low-LoD city models could unlock drones' potential for <strong>global</strong> urban localization. 
+                To address these issues, we introduce LoD-Loc v2, which employs a coarse-to-fine strategy using explicit silhouette alignment to achieve accurate localization over low-LoD city models in the air.
+                Specifically, given a query image, LoD-Loc v2 first applies a building segmentation network to shape building silhouettes. Then, in the coarse pose selection stage, we construct a pose cost volume by uniformly sampling pose hypotheses around a prior pose to represent the pose probability distribution. Each cost of the volume measures the degree of alignment between the projected and predicted silhouettes. We select the pose with maximum value as the coarse pose. In the fine pose estimation stage, a particle filtering method incorporating a multi-beam tracking approach is used to efficiently explore the hypothesis space and obtain the final pose estimation. 
+                To further facilitate research in this field, we release two datasets with LoD1 city models covering 10.7 km<sup>2</sup>, along with real RGB queries and ground-truth pose annotations. Experimental results show that LoD-Loc v2 improves estimation accuracy with high-LoD models and enables localization with low-LoD models for the first time. Moreover, it outperforms state-of-the-art baselines by large margins, even surpassing texture-model-based methods, and broadens the convergence basin to accommodate larger prior errors. The project are available at <a href="https://github.com/VictorZoo/LoD-Loc-v2" class="text-blue-600 hover:underline">https://github.com/VictorZoo/LoD-Loc-v2</a>.
+            </p>
+        </section>
+
+        <!-- 4. Demo Video -->
+        <section id="video-section">
+            <h2 class="text-3xl font-bold mb-8 text-center">Demo Video</h2>
+            
+            <!-- YouTube Embed (Recommended) -->
+            <div class="aspect-w-16 aspect-h-9 w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
+                <iframe class="w-full h-[500px]" 
+                        src="https://www.youtube.com/embed/pU2_JjncLPg" 
+                        title="LoD-Loc v2 Demo Video" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            
+            <p class="mt-4 text-center text-gray-600">
+                Please watch the video for a detailed explanation of our pipeline and qualitative results.
+            </p>
+        </section>
+
+        <!-- 5. Overview of Methodology -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-center">Overview of Methodology</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Method Image -->
+                <div class="w-full">
+                    <!-- Ensure you have this image in your assets folder -->
+                    <img src="./assets/method.png" 
+                         alt="Overview of LoD-Loc v2" class="rounded-lg shadow-md w-full">
+                </div>
+            </div>
+            <div class="mt-6 text-gray-700 text-lg leading-relaxed text-justify">
+                <p>
+                    1. LoD-Loc v2 employs a building segmentation module to extract building silhouettes \( M_q \) from the query image \( I_q \). 2. A 4D pose cost volume \( \mathcal{C} \) is built for pose hypotheses \( \{ \boldsymbol{\xi}_{hyp} \} \) sampled around the prior pose \( {\boldsymbol{\xi}}_p \) to select the pose \( {\boldsymbol{\xi}}_c \) with the highest probability, based on the alignment between projected and predicted building silhouettes. 3. A particle filter refinement is applied to refine the pose \( {\boldsymbol{\xi}}_c \) to obtain a final accurate pose \( {\boldsymbol{\xi}}^{*} \).
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. Visualization Results -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-center">Visualization Results</h2>
+            
+            <!-- Single Large Comparison Image -->
+            <div class="w-full mb-6">
+                <!-- Ensure you have this image in your assets folder -->
+                <img src="./assets/visualization.png" class="w-full rounded-lg shadow-sm" alt="Visualization Results">
+            </div>
+            
+            <!-- Caption -->
+            <p class="text-gray-700 text-lg leading-relaxed text-justify">
+                The visualized segmentation results demonstrate the model’s excellent segmentation performance. Better alignment indicates a more accurate pose prediction. Besides, the top two rows are from the UAVD4L-LoDv2 dataset, while the bottom two rows are from the Swiss-EPFLv2 dataset.
+            </p>
+        </section>
+
+        <!-- 7. BibTeX -->
+        <section class="bg-gray-100 p-8 rounded-xl">
+            <h2 class="text-2xl font-bold mb-4">BibTeX</h2>
+            <p class="mb-4 text-gray-600">If you find this work useful for your research, please cite our paper:</p>
+            <div class="relative">
+                <pre class="bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto font-mono text-sm">
+<code>@article{LoDLocv2,
+  title={LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment},
+  author={Zhu, Juelin and Peng, Shuaibang and Wang, Long and Tan, Hanlin and Liu, Yu and Zhang, Maojun and Yan, Shen},
+  journal={ICCV},
+  year={2025}
+}</code>
+                </pre>
+                <button onclick="copyBibtex()" class="absolute top-2 right-2 bg-gray-600 hover:bg-gray-500 text-white text-xs px-2 py-1 rounded">
+                    Copy
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+        <p>
+            Website template adapted from 
+            <a href="https://nerfies.github.io" class="text-blue-500 hover:underline">Nerfies</a>.
+        </p>
+        <p class="mt-2">
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="text-blue-500 hover:underline">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        function copyBibtex() {
+            const el = document.createElement('textarea');
+            el.value = document.querySelector('code').innerText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('BibTeX copied to clipboard!');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</body>
+</html>
